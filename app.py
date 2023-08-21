@@ -1,7 +1,7 @@
-from flask import Flask, jsonify, render_template, request
-import pandas as pd
 import pickle
-import json
+
+import pandas as pd
+from flask import Flask, jsonify, render_template, request
 
 app = Flask(__name__)
 
@@ -66,4 +66,4 @@ def api_predict():
         return jsonify({'error': "Méthode non autorisée. Veuillez utiliser la méthode POST pour effectuer une prédiction."})
 
 if __name__ == '__main__':
-    app.run(port=8000)
+    app.run(port=8000, debug=True, use_reloader=False)
