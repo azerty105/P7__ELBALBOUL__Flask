@@ -39,7 +39,8 @@ def predict():
             return render_template('result.html', prediction=prediction)
         else:
             # Afficher un message d'erreur si l'identifiant du client n'est pas trouvé
-            return render_template('result.html', error="Identifiant non reconnu")
+            return render_template('result.html', error=a)
+            # return render_template('result.html', error="Identifiant non reconnu")
 
     return render_template('index.html')
 
