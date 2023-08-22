@@ -23,10 +23,6 @@ def predict():
         # Obtenir l'identifiant du client à partir du formulaire
         client_id = int(request.form['client_id'])
 
-        a = f'{client_id}'
-
-        print(f' tous les identifiants {a}')
-
         # Vérifier si l'identifiant du client est présent dans le dataframe
         if client_id in df['SK_ID_CURR'].values:
             # Obtenir les caractéristiques du client
@@ -39,8 +35,7 @@ def predict():
             return render_template('result.html', prediction=prediction)
         else:
             # Afficher un message d'erreur si l'identifiant du client n'est pas trouvé
-            return render_template('result.html', error=a)
-            # return render_template('result.html', error="Identifiant non reconnu")
+            return render_template('result.html', error="Identifiant non reconnu")
 
     return render_template('index.html')
 
