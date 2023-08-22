@@ -23,7 +23,7 @@ def predict():
         # Obtenir l'identifiant du client à partir du formulaire
         client_id = int(request.form['client_id'])
 
-        a = df['SK_ID_CURR'].values
+        a = f'{client_id}'
 
         print(f' tous les identifiants {a}')
 
